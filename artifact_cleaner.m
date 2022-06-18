@@ -34,6 +34,9 @@ LINELENGTH_THRESHOLD = 300;
 LL_winLen = 60; LL_winDisp = 60; % LINE LENGTH WINDOW SPECIFICATIONS (seconds)
 NBSQI_winLen = 3; NBSQI_winDisp = 3; % NB-SQI WINDOW SPECIFICATIONS (seconds)
 
+NIRS_MIN = 50; NIRS_MAX = 100; % physiological bounds for NIRS
+ABP_MIN = 30; ABP_MAX = 300; % physiological bounds for ABP
+
 
 %% CLEANING
 
@@ -46,14 +49,11 @@ if isNIRS % signal is NIRS
     sampleRate = 1;
     [cleanedData,windowFeatures] = window(double(rawData),sampleRate,LL_winLen,LL_winDisp,1,1,threshold); % CLEAN
 
-    % Threshold filter 
-    min = 50; % minimum acceptable NIRS value
-    max = 100; %  maximum acceptable NIRS value
-    bad_indices = (cleanedData < min) | (cleanedData > max); % get bad indices 
+    % Physiological bounds filter 
+
+    bad_indices = (cleanedData < NIRS_MIN) | (cleanedData > NIRS_MAX); % get bad indices 
     cleanedData(bad_indices) = NaN; % replace bad indices with NaNs
 
-    bad_indices = (cleanedData < min) | (cleanedData > max); % get bad indices 
-    cleanedData(bad_indices) = NaN; % replace bad indices with NaNs
     
 else % signal is ABP
     
@@ -63,6 +63,11 @@ else % signal is ABP
     sampleRate = 125;
     [cleanedData,windowFeatures] = window(double(rawData),sampleRate,NBSQI_winLen,NBSQI_winDisp,0,1,threshold); % CLEAN  
 
+    % Physiological bounds filter 
+    bad_indices = (cleanedData < ABP_MIN) | (cleanedData > ABP_MAX); % get bad indices 
+    cleanedData(bad_indices) = NaN; % replace bad indices with NaNs
+   
+    
 end
     
 
