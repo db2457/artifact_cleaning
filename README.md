@@ -34,8 +34,10 @@ Change cleaning specifications in `artifact_cleaner.m`
   - `NBISQI_THRESHOLD` refers to the minimum permitted quality for a given subset of ABP signal based on the 0-5 scale created by Ignacz et al.
   - `LINELENGTH_THRESHOLD` refers to the highest permitted line-length for a given subset of NIRS signal. 
 
+
   - `LL_winLen` and `LL_winDisp` refer to the length (L) and displacement (D) of the sliding window implemented to clean NIRS signals.
   - `NBSQI_winLen` and `NBSQI_winDisp` refer to the length (L) and displacement (D) of the sliding window implemented to clean ABP signals. 
+
 
   - `NIRS_MIN` and `NIRS_MAX` refer to the minimum and maximum allowed physiological NIRS values.
   - `ABP_MIN` and `ABP_MAX` refer to the minimum and maximum allowed physiological ABP values.
