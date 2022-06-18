@@ -26,7 +26,6 @@ Clone this repo to your desktop. The artifact cleaning process takes place in th
 2) Clean signal: `artifact_cleaner(rawData, isNIRS)`. Pass `isNIRS=1` if `rawData` is a NIRS signal. For ABP signal, `isNIRS=0`.
 3) Overwrite cleaned data onto original HDF5 file: `writeData(abp_cleaned,nirsl_cleaned,nirsr_cleaned,filename,data_dir)`.
 
-
 ### Example
 Yale folks: download example HDF5 file [here on Yale Box](https://yale.box.com/s/kv3bies0mhiwqar22juyhg71wv8tfkpi). Open `example.m`. This script runs the above three steps on the example file.
 
@@ -37,6 +36,9 @@ Change cleaning specifications in `artifact_cleaner.m`
 
   - `LL_winLen` and `LL_winDisp` refer to the length (L) and displacement (D) of the sliding window implemented to clean NIRS signals.
   - `NBSQI_winLen` and `NBSQI_winDisp` refer to the length (L) and displacement (D) of the sliding window implemented to clean ABP signals. 
+
+  - `NIRS_MIN` and `NIRS_MAX` refer to the minimum and maximum allowed physiological NIRS values.
+  - `ABP_MIN` and `ABP_MAX` refer to the minimum and maximum allowed physiological ABP values.
 
 
 ### Reference
