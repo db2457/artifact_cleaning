@@ -3,11 +3,9 @@
 
 ![Capture](https://user-images.githubusercontent.com/95881960/174457611-8edeb142-a427-44f4-b5eb-d10bbfeca4ac.PNG)
 
-Automated removal of artifacts in waveform arterial blood pressure (ABP) and numeric near-infared spectroscopy (NIRS) signals.
-
 ### Introduction
 
-The objective of this code is to remove artifacts in high-frequency ABP waveforms and NIRS signals collected from ICM+ software at the bedside (Cambridge Enterpises, 2022). Previously, artifact removal in the Petersen lab was done manually to prevent non-physiological abberations in ICM+ computed autoregulary data such as the cerebral oximetry index (COx) and limits of autoegulation (LA). However, manual artifact review is both time-costly and rater dependent. This project seeks to address these issues by standardizing and automating the artifact review process.
+The objective of this code is to automatically remove artifacts in high-frequency arterial blood pressure (ABP) waveforms and near-infared spectroscopy (NIRS) signals collected from ICM+ software at the bedside (Cambridge Enterpises, 2022). Previously, artifact removal in the Petersen lab was done manually to prevent non-physiological abberations in ICM+ computed autoregulary data such as the cerebral oximetry index (COx) and limits of autoegulation (LA). However, manual artifact review is both time-costly and rater dependent. This project seeks to address these issues by standardizing and automating the artifact review process.
 
 This artifact-cleaning step precedes calculation of autoregulatory data in ICM+.
 
